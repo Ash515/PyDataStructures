@@ -53,16 +53,16 @@ class doubly:
                 new_node.pref=n
                 
 dl=doubly()
-dl.insert_empty(10)
-dl.insert_begin(20)
+dl.insert_empty(40)
 dl.insert_begin(30)
-dl.insert_end(40)
-dl.forward()
-dl.reverse()
+dl.insert_begin(20)
+dl.insert_end(50)
+dl.forward()      #20 ---->30---->40 ---->50---->
+dl.reverse()      #50 ---->40 ---->30 ---->20 ---->
 
 
-#output 
-#30 ---->20 ---->10 ---->40 ---->
+
+
 
 
 
