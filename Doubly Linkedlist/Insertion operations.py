@@ -70,6 +70,29 @@ class doubly:
                     if(n.nref is not None):
                         n.nref.pref=new_node
                     n.nref=new_node
+    def insert_before(self,data,x):
+        if(self.head is None):
+            print("List is empty")
+        else:
+            n=self.head
+            while(n is not None):
+                if(x==n.data):
+                    break
+                n=n.nref
+            if(n is None):
+                print("There is no any element found")
+            else:
+                    new_node=Node(data)
+                    new_node.pref=n.pref
+                
+                    new_node.nref=n
+                    if(n.pref is not None):
+                        n.pref.nref=new_node
+                    else:
+                        self.head=new_node
+                        n.pref=new_node
+                        
+     
                 
 dl=doubly()
 dl.insert_empty(40)
@@ -77,6 +100,7 @@ dl.insert_begin(30)
 dl.insert_begin(20)
 dl.insert_end(50)
 dl.insert_after(35,30)  #20 ---->30 ---->36 ---->40 ---->50 ---->60 ---->
+dl.insert_before(45,20) #20 ---->30 ---->36 ---->40 ---->45 ---->50 ---->60 ---->
 dl.forward()      #20 ---->30---->40 ---->50---->
 dl.reverse()      #50 ---->40 ---->30 ---->20 ---->
 
