@@ -101,16 +101,47 @@ class doubly:
         else:
             self.head=self.head.nref
             self.head.pref=None
-                        
+    
+    def delete_end(self):
+        if(self.head is None):
+            print("The list is empty")
+            return
+        if(self.head.nref is None):
+            self.head=None
+            print("The list is empty you cant delte any other elements")
+        else:
+            n=self.head
+            while n.nref is not None:
+                n=n.nref
+            if(n.nref is None):
+                n.pref.nref=None
+
+    def delete_by_value(self,x):
+        if(self.head is None):
+            print("The list is empty")
+            return
+        if(self.head.nref is None):
+            self.head=None
+            print("The list is empty you cant delte any other elements")
+            return
+        n=self.head
+        while n.nref is not None:
+            if(x==n.data):
+                break
+            n=n.nref
+        if( n.nref is not None):
+            n.nref.pref=n.pref
+            n.pref.nref=n.nref
+        else:
+            if(n.data==x):
+                n.pref.nref=None
+            else:
+                print("The is no any particular node to delete")
+                
+                      
                     
                 
  
-
-        
-        
-                   
-    
-                
 dl=doubly()
 dl.insert_empty(50) 
 dl.insert_begin(40)
@@ -119,11 +150,11 @@ dl.insert_begin(20)
 dl.insert_end(60)
 dl.insert_after(36,30)   #20 ---->30 ---->36 ---->40 ---->50 ---->60 ---->
 dl.insert_before(45,20) #20 ---->30 ---->36 ---->40 ---->45 ---->50 ---->60 ---->
-dl.delete_begin()
+dl.delete_begin()              #30 ---->36 ---->40 ---->45 ---->50 ---->60 ---->
+dl.delete_end()                  #20 ---->30 ---->36 ---->40 ---->50 ---->
+dl.delete_by_value(40)  #45 ---->20 ---->30 ---->36 ---->50 ---->60 ---->
 dl.forward()                         #20 ---->30 ---->40 ---->50 ---->60 ---->
-
-
-
+dl.reverse()                          #60 ---->50 ---->40 ---->30 ---->20 ---->
 
 
 
