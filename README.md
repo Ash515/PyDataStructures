@@ -2,6 +2,18 @@
 A data structure is a particular way of organizing data in a computer so that it can be used effectively. 
 For example, we can store a list of items having the same data-type using the array data structure. This repository contains detailed data structures topics with implementations.📉
 
+## Topics
+### Linear Data Structures
+1) LinkedList
+  - Singly linked list
+  - Doubly linked list
+  - Circular linked list
+2) Queue
+3) Stack
+
+### Non linear Data Structures
+1) Binary Trees
+
 # 🚀&nbsp;Installation 
 1. Clone the repository 
 ```
