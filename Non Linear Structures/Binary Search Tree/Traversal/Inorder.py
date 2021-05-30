@@ -23,7 +23,7 @@ class BST():
                 self.rchild.insert(data)
             else:
                 self.rchild=BST(data)
-     
+    
     def search(self,data):       # Search method
         if self.key==data:       # if node is equal to key it returns message
             print("Node is present !")
@@ -40,15 +40,21 @@ class BST():
                 self.rchild.search(data)    #recursive method
             else:
                 print("Node is not present")
-    
+   
     def preorder(self):
-        
         print(self.key,end="-----")
         if self.lchild:
             self.lchild.preorder()
         
         if self.rchild:
             self.rchild.preorder()
+    
+    def inorder(self):
+        if self.lchild:
+            self.lchild.inorder()
+        print(self.key,end="====>")
+        if self.rchild:
+            self.rchild.inorder()
 
         
 
@@ -60,5 +66,8 @@ for i in list_:
 search=[20,30,10,15,45]
 for j in search:
     root.search(j)
-print("Pre-order Traversal:")   #Pre-order Traversal:
-root.preorder()                 # 30-----10-----20-----15-----
+print("Pre-order Traversal:")
+root.preorder()
+print("\nInorder Traversal:")
+root.inorder()                       #Inorder Traversal:
+                                     #10====>15====>20====>30====>
