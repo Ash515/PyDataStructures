@@ -40,13 +40,18 @@ class BST():
                 self.rchild.search(data)    #recursive method
             else:
                 print("Node is not present")
-   
-    def inorder(self):
+    def postorder(self):
         if self.lchild:
-            self.lchild.inorder()
-        print(self.key,end="====>")
+            self.lchild.postorder()
+        
         if self.rchild:
-            self.rchild.inorder()
+            self.rchild.postorder()
+        
+        print(self.key,end="-----")
+   
+   
+    
+   
 
         
 
@@ -59,6 +64,7 @@ search=[20,30,10,15,45]
 for j in search:
     root.search(j)
 
-print("\nInorder Traversal:")
-root.inorder()                       #Inorder Traversal:
-                                     #10====>15====>20====>30====>
+print("postorder Traversal:")
+root.postorder()                   #  postorder Traversal:
+                                   #  15-----20-----10-----30-----
+                                     
