@@ -99,6 +99,11 @@ class BST():
             current=current.lchild
         print("Minimum node in this tree is: ",current.key)
     
+    def max_node(self):
+        current=self
+        while current.rchild:
+            current=current.rchild
+        print("Maximum node present in the given tree is:",current.key)
             
 
    
@@ -116,13 +121,7 @@ for i in list_:
 print("Pre-order Traversal:")   #Pre-order Traversal:
 root.preorder()                 # 30-----10-----20-----15-----
 print()
-
-
-
-
-
-
 root.min_node()
-
+root.max_node()
 
 root.preorder()               
