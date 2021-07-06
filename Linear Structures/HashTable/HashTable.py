@@ -33,7 +33,7 @@ class HashTable():
 t=HashTable()
 print(t.get_hash('october 6'))
 t.add('october 6',250)
-print(t.array)
+t.array
 
 get_val=t.get('october 6')
 print(get_val)
