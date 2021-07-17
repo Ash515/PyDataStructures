@@ -14,7 +14,7 @@ def add_node(v):
             temp.append(0)
         graph.append(temp)
 
-def add_edges(v1,v2,cost):
+def add_edges(v1,v2):
     if v1 not in nodes:
         print(v1,"not present in the graph")
     elif v2 not in nodes:
@@ -23,8 +23,11 @@ def add_edges(v1,v2,cost):
         index1=nodes.index(v1)
         index2=nodes.index(v2)
 
-        graph[index1][index2]=cost
-        graph[index2][index1]=cost
+        graph[index1][index2]=1  #we are taking only directed side 
+       
+
+
+
 
 def print_matrix():
     for i in range(node_count):
@@ -32,9 +35,13 @@ def print_matrix():
             print(graph[i][j],end=" ")
         print()
 
+
+
+
 nodes=[]
 graph=[]
 node_count=0
+
 
 
 add_node("A")  #function calling
@@ -42,8 +49,8 @@ add_node("B")
 add_node("C") 
 add_node("D")
  
-add_edges("A","C",10)
-add_edges("A","D",20)
+add_edges("A","C")
+add_edges("B","D")
 
 print(graph)
 print_matrix()
