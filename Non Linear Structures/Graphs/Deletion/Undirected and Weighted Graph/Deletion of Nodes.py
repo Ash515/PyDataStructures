@@ -27,7 +27,8 @@ def add_edges(v1,v2,cost):
         graph[index2][index1]=cost
 
 def delete_node(v):
-    if v not in graph:
+    global node_count
+    if v not in nodes:
         print(v,"not in graph")
     else:
         index1=nodes.index(v)
@@ -61,6 +62,7 @@ add_edges("A","C",10)
 add_edges("A","D",20)
 
 delete_node("D")
-print(graph)
+print("After deleting")
 print_matrix()
+
 
