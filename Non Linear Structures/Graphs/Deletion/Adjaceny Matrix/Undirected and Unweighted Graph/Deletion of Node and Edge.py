@@ -1,3 +1,8 @@
+'''
+For both unweighted and weighted graph deletion of edges are same method 
+'''
+
+
 def add_node(v):
     global node_count
     if v in nodes:
@@ -37,7 +42,19 @@ def delete_node(v):
         graph.pop(index1)
         for i in graph:
             i.pop(index1)
-        
+
+# Deletion of Edges        
+def delete_edge(v1,v2):
+    if v1 not in nodes:
+        print(v1,"not present in graph")
+    elif v2 not in nodes:
+        print(v2,"not present in graph")
+    else:
+        index1=nodes.index(v1)
+        index2=nodes.index(v2)
+
+        graph[index1][index2]=0
+        graph[index2][index1]=0
 
 
 
@@ -61,7 +78,8 @@ add_node("D")
 add_edges("A","C",10)
 add_edges("A","D",20)
 
-delete_node("D")
+delete_edge("A","B")
+delete_edge("C","D")
 print("After deleting")
 print_matrix()
 
