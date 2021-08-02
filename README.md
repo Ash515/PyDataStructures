@@ -13,6 +13,8 @@ For example, we can store a list of items having the same data-type using the ar
 
 ### Non linear Data Structures
 1) Binary Trees
+2) Heaps
+3) Graphs
 
 # 🚀&nbsp;Installation 
 1. Clone the repository 
